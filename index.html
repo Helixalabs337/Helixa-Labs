@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Helixa Labs — nowoczesna marka stawiająca na jakość, transparentność i profesjonalizm." />
+  <title>Helixa Labs</title>
+  <style>
+    :root{
+      --bg:#06142b;
+      --bg2:#0b1e3c;
+      --card:#0d2548;
+      --white:#ffffff;
+      --muted:#a9bdd8;
+      --blue:#2f80ff;
+      --blue2:#67a7ff;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(47,128,255,.18), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(103,167,255,.10), transparent 25%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:rgba(6,20,43,.74);
+      border-bottom:1px solid var(--line);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:74px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,var(--blue),var(--blue2));
+      box-shadow:0 10px 30px rgba(47,128,255,.25);
+      font-size:18px;font-weight:900;
+    }
+    .navlinks{display:flex;gap:26px;color:#d8e6f7;font-size:14px}
+    .navlinks a:hover{color:#fff}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:14px;font-weight:700;
+      border:1px solid transparent;transition:.2s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--blue),#4f9bff);
+      box-shadow:0 14px 30px rgba(47,128,255,.25);
+    }
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03)}
+    .hero{padding:98px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .eyebrow{
+      display:inline-flex;padding:7px 12px;border:1px solid rgba(103,167,255,.30);
+      background:rgba(47,128,255,.10);border-radius:999px;color:#b9d7ff;
+      font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase
+    }
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:20px 0 20px;letter-spacing:-.045em}
+    .gradient{background:linear-gradient(90deg,#fff,#7eb6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:680px;color:var(--muted);font-size:18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .visual{
+      min-height:430px;border-radius:32px;border:1px solid var(--line);
+      background:
+        linear-gradient(155deg,rgba(255,255,255,.07),rgba(255,255,255,.015)),
+        radial-gradient(circle at 50% 30%, rgba(47,128,255,.35), transparent 42%),
+        var(--bg2);
+      box-shadow:var(--shadow);position:relative;overflow:hidden;
+      display:grid;place-items:center;
+    }
+    .orb{
+      width:220px;height:220px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.24);
+      box-shadow:inset 0 0 60px rgba(103,167,255,.22),0 0 80px rgba(47,128,255,.18);
+      display:grid;place-items:center;font-size:54px;font-weight:900;letter-spacing:.04em;
+      position:relative;
+    }
+    .orb:before,.orb:after{
+      content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12)
+    }
+    .orb:before{width:300px;height:300px}.orb:after{width:380px;height:380px}
+    .chip{
+      position:absolute;padding:10px 14px;border-radius:12px;
+      background:rgba(5,20,44,.75);border:1px solid var(--line);font-size:13px;color:#d7e8fb;
+      backdrop-filter:blur(12px)
+    }
+    .chip.one{top:58px;left:34px}.chip.two{bottom:62px;right:30px}
+    section{padding:80px 0}
+    .section-head{max-width:720px;margin-bottom:34px}
+    h2{font-size:clamp(30px,4.5vw,48px);line-height:1.1;margin:10px 0 12px;letter-spacing:-.03em}
+    .section-head p,.muted{color:var(--muted)}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:26px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+    }
+    .icon{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+      background:rgba(47,128,255,.16);border:1px solid rgba(103,167,255,.20);
+      margin-bottom:18px;font-size:20px;
+    }
+    .card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted)}
+    .about{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:38px;align-items:center
+    }
+    .panel{
+      min-height:330px;border-radius:28px;padding:34px;
+      border:1px solid var(--line);background:var(--bg2);box-shadow:var(--shadow);
+      display:flex;flex-direction:column;justify-content:flex-end;
+      background-image:radial-gradient(circle at 75% 20%, rgba(47,128,255,.26), transparent 30%);
+    }
+    .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .stat{padding:16px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .stat b{display:block;font-size:24px}.stat span{color:var(--muted);font-size:12px}
+    details{
+      border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+      background:rgba(255,255,255,.025);margin-bottom:12px
+    }
+    summary{cursor:pointer;font-weight:700}
+    details p{color:var(--muted);margin-bottom:0}
+    .cta{
+      border:1px solid var(--line);border-radius:28px;padding:42px;
+      background:linear-gradient(135deg,rgba(47,128,255,.18),rgba(255,255,255,.03));
+      display:flex;align-items:center;justify-content:space-between;gap:24px
+    }
+    footer{padding:34px 0 48px;color:#89a4c4;border-top:1px solid var(--line);font-size:14px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 11px}
+    @media(max-width:850px){
+      .hero-grid,.about{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .navlinks{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 4%;background:#07172f;border-bottom:1px solid var(--line);flex-direction:column}
+      .navlinks.open{display:flex}
+      .menu-btn{display:block}
+      nav>.btn{display:none}
+      .hero{padding-top:70px}
+      .visual{min-height:360px}
+      .cta{align-items:flex-start;flex-direction:column}
+      .statrow{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#start" class="brand"><span class="logo">H</span> HELIXA LABS</a>
+      <div class="navlinks" id="navlinks">
+        <a href="#oferta">Oferta</a>
+        <a href="#onas">O nas</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a class="btn btn-primary" href="#kontakt">Skontaktuj się</a>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="start">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Nowoczesność • Jakość • Precyzja</span>
+        <h1>Technologia, której możesz <span class="gradient">zaufać.</span></h1>
+        <p>Helixa Labs to nowoczesna marka budowana wokół wysokich standardów, przejrzystej komunikacji i profesjonalnego podejścia.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#oferta">Poznaj ofertę</a>
+          <a class="btn btn-ghost" href="#onas">Dowiedz się więcej</a>
+        </div>
+      </div>
+      <div class="visual" aria-label="Wizualizacja marki Helixa Labs">
+        <div class="chip one">PRECYZJA / QUALITY</div>
+        <div class="orb">HL</div>
+        <div class="chip two">HELIXA LABS / 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Nasze podejście</span>
+        <h2>Standard, który widać od pierwszego kontaktu.</h2>
+        <p>Projekt strony jest przygotowany tak, aby budować zaufanie do marki i dobrze wyglądać zarówno na telefonie, jak i komputerze.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="icon">✦</div>
+          <h3>Wysoka jakość</h3>
+          <p>Spójny branding, nowoczesna prezentacja i nacisk na profesjonalny odbiór.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Transparentność</h3>
+          <p>Prosta komunikacja, jasne informacje i czytelny układ treści.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Szybki kontakt</h3>
+          <p>Wyraźne przyciski i sekcja kontaktowa prowadząca użytkownika prosto do działania.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="onas">
+    <div class="container about">
+      <div class="panel">
+        <span class="eyebrow">HELIXA LABS</span>
+        <h2 style="margin-bottom:8px">Marka zbudowana na detalach.</h2>
+        <p class="muted">Czysty design, mocny charakter i nowoczesna identyfikacja wizualna.</p>
+        <div class="statrow">
+          <div class="stat"><b>24/7</b><span>Dostęp do strony</span></div>
+          <div class="stat"><b>100%</b><span>Responsywny layout</span></div>
+          <div class="stat"><b>1 plik</b><span>Łatwy start</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">O nas</span>
+        <h2>Minimalizm, który wygląda premium.</h2>
+        <p class="muted">Helixa Labs stawia na nowoczesną komunikację, mocny wizerunek i konsekwentny branding. Ta wersja strony może być później rozbudowana o katalog produktów, sklep, płatności, panel klienta, blog albo formularz zamówień.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt">Napisz do nas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Najczęstsze pytania</h2>
+      </div>
+      <details>
+        <summary>Czy strona działa na telefonie?</summary>
+        <p>Tak. Układ automatycznie dopasowuje się do smartfonów, tabletów i komputerów.</p>
+      </details>
+      <details>
+        <summary>Czy można dodać sklep internetowy?</summary>
+        <p>Tak. Stronę można później rozbudować o koszyk, płatności, panel produktów i obsługę zamówień.</p>
+      </details>
+      <details>
+        <summary>Czy mogę zmienić teksty i dane kontaktowe?</summary>
+        <p>Tak. Wszystkie treści znajdują się w jednym pliku i można je łatwo edytować.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h2 style="margin-bottom:8px">Gotowy, żeby zrobić kolejny krok?</h2>
+          <p class="muted" style="margin:0">Podmień poniższy adres na swój właściwy e-mail, Instagram lub formularz kontaktowy.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:kontakt@helixalabs.pl">kontakt@helixalabs.pl</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Helixa Labs. Wszelkie prawa zastrzeżone.</div>
+    <div>Polityka prywatności • Kontakt • Informacje prawne</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function toggleMenu(){
+    document.getElementById('navlinks').classList.toggle('open');
+  }
+  document.querySelectorAll('#navlinks a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
